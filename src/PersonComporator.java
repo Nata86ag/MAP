@@ -1,11 +1,12 @@
 import java.util.Comparator;
 
 public class PersonComporator implements Comparator<Person> {
-    private final int maxWord;
+    public int maxWord;
 
     public PersonComporator(int maxWord) {
         this.maxWord = maxWord;
     }
+
 
     @Override
     public int compare(Person o1, Person o2) {
