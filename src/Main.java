@@ -1,9 +1,12 @@
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Set<Person> people = new TreeSet<>(new PersonComporator(2).reversed());
+
+        List<Person> people = new ArrayList<>();
+
         people.add(new Person("Мария", "Шарапова", 35));
         people.add(new Person("Александр", "Пушкин", 223));
         people.add(new Person("Филипп", "Киркоров", 55));
@@ -11,5 +14,12 @@ public class Main {
 
         System.out.println(people);
 
+        people.removeIf(p -> p.getAge() < 18);
+        Collections.sort(people, new PersonComporator(2));
+        System.out.println(people);
+
     }
+
+    ;
 }
+
